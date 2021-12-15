@@ -1,5 +1,5 @@
 resource "boundary_auth_method_oidc" "auth0" {
-  count = var.enable_oidc ? 1 : 0
+  count              = var.enable_oidc ? 1 : 0
   name               = "Auth0"
   description        = "OIDC provider integration for global scope"
   scope_id           = boundary_scope.global.id

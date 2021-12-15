@@ -2,7 +2,7 @@
 
 
 resource "boundary_user" "kelly" {
-  count = var.enable_oidc ? 1 : 0
+  count       = var.enable_oidc ? 1 : 0
   name        = "kelly"
   description = "OIDC globally scoped admin user kelly"
   account_ids = [boundary_account_oidc.kelly[0].id]
@@ -11,7 +11,7 @@ resource "boundary_user" "kelly" {
 
 
 resource "boundary_user" "dave" {
-  count = var.enable_oidc ? 1 : 0
+  count       = var.enable_oidc ? 1 : 0
   name        = "dave"
   description = "OIDC globally scoped admin user dave"
   account_ids = [
@@ -39,14 +39,14 @@ resource "boundary_user" "hera" {
   name        = "hera"
   description = "password account for hera"
   account_ids = []
-  scope_id = boundary_scope.global.id
+  scope_id    = boundary_scope.global.id
 }
 
 resource "boundary_user" "ares" {
   name        = "ares"
   description = "password account for ares"
   account_ids = []
-  scope_id = boundary_scope.global.id
+  scope_id    = boundary_scope.global.id
 }
 
 resource "boundary_user" "backend" {
