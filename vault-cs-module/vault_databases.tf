@@ -9,7 +9,7 @@ resource "vault_database_secret_backend_connection" "northwind_connection" {
   allowed_roles = ["dba", "analyst"]
 
   postgresql {
-    connection_url = "postgresql://${var.psql_service_accnt}:${var.psql_serv_accnt_pw}@${var.psql_hostname}:${var.psql_port}/${var.root_db}?sslmode=disable"
+    connection_url = "postgresql://${var.psql_user}:${var.psql_pw}@${var.psql_hostname}:${var.psql_port}/${var.root_db}?sslmode=disable"
   }
 }
 

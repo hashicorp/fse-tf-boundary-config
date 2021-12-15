@@ -2,6 +2,17 @@ variable "vault_public_ip" {
     description = "public ip address of the vault server"
 }
 
+variable "vault_port" {
+  description = "connection api port on the vault server"
+}
+
+variable "psql_password" {
+  type = string
+}
+
+variable "psql_user" {
+  type = string
+}
 variable "oidc_subject1" {
   
 }

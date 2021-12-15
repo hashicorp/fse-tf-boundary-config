@@ -7,12 +7,12 @@ variable "psql_port" {
   description = "port the vault and boundary servers will use to connect to the psql server"
 }
 
-variable "psql_service_accnt" {
+variable "psql_user" {
   default = "postgres"
   description = "service account for vault to connect to the psql server"
 }
 
-variable "psql_serv_accnt_pw" {
+variable "psql_pw" {
   default = "postgres"
   description = "service account password for vault to connect to the psql server"
 }
@@ -33,5 +33,5 @@ variable "vault_hostname" {
 
 variable "vault_port" {
   default = 8200
-  description = "the configured port to connect to the psql server"
+  description = "the configured port to connect to the vault server"
 }

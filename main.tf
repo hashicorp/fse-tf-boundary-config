@@ -24,9 +24,16 @@ oidc_client_id     = var.oidc_client_id
 oidc_subject2      = var.oidc_subject2
 oidc_subject1      = var.oidc_subject1
 enable_oidc = var.enable_oidc
+psql_password = var.psql_password
+psql_user = var.psql_user
+vault_port = var.vault_port
 }
 
 module "vault-cs" {
   source = "./vault-cs-module"
   project_id = module.base-config.infr_project_id
+  vault_hostname = var.vault_public_ip
+  vault_port = var.vault_port
+  psql_pw = var.psql_password 
+  psql_user = var.psql_user
 }
