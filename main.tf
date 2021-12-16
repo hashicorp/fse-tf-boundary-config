@@ -11,7 +11,7 @@ EOT
 }
 
 provider "vault" {
-  address    = "http://${var.vault_public_ip}:8201"
+  address    = "http://${var.vault_public_ip}:${var.vault_port}"
   token      = var.vault_token
 }
 

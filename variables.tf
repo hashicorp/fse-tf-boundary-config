@@ -3,6 +3,7 @@ variable "vault_public_ip" {
 }
 
 variable "vault_port" {
+  default = 8201
   description = "connection api port on the vault server"
 }
 
@@ -41,4 +42,7 @@ variable "vault_unseal" {
 }
 
 variable "vault_token" {
+}
+
+variable "tfc_token " {
 }
