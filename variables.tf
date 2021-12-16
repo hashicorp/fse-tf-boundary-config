@@ -44,5 +44,5 @@ variable "vault_unseal" {
 variable "vault_token" {
 }
 
-variable "tfc_token " {
+variable "tfc_token" {
 }
