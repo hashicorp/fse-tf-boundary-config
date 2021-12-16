@@ -42,3 +42,7 @@ variable "vault_unseal" {
 
 variable "vault_token" {
 }
+
+variable "vault_public_ip" {
+  type = string
+}
