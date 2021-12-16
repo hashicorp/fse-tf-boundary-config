@@ -1,5 +1,5 @@
 provider "boundary" {
-  addr             = "http://100.24.41.171:9200/"
+  addr             = "http://${var.controller_ip}:9200/"
   recovery_kms_hcl = <<EOT
   kms "awskms" {
   purpose    = "recovery"

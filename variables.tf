@@ -7,6 +7,9 @@ variable "vault_port" {
   description = "connection api port on the vault server"
 }
 
+variable "controller_ip" {
+}
+
 variable "psql_pw" {
   type = string
 }
