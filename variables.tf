@@ -37,3 +37,8 @@ variable "enable_oidc" {
 default = false
 }
 
+variable "vault_unseal" {
+}
+
+variable "vault_token" {
+}
