@@ -24,7 +24,7 @@ data "tfe_workspace" "boundary_infra" {
   organization = "PublicSector-ATARC"
 }
 data "tfe_outputs" "infra" {
-  workspace         = data.tfe_workspace.boundary_infra.id
+  workspace         = data.tfe_workspace.boundary_infra.name
   organization = "PublicSector-ATARC"
 }
 
