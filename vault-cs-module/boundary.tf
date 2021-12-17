@@ -8,7 +8,7 @@ resource "boundary_host_catalog" "host_cat" {
 resource "boundary_host" "psql" {
   name            = "docker-psql"
   description     = "psql northwinds database"
-  address         = "${var.psql_hostname}"
+  address         = "${var.psql_host}"
   type            = "static"
   host_catalog_id = boundary_host_catalog.host_cat.id
 }
