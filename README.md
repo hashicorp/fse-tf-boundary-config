@@ -1,1 +1,1 @@
-boundary config code demos
+Boundary configuration module with some vault sprinkled in here and there
