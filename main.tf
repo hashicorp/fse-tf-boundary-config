@@ -5,7 +5,7 @@ provider "boundary" {
   purpose    = "recovery"
   region     = "us-east-1"
   key_id     = "global_recovery"
-  kms_key_id = ${data.tfe_outputs.infra.values.kms_recovery_key_id}
+  kms_key_id = "${data.tfe_outputs.infra.values.kms_recovery_key_id}"
 }
 EOT
 }
