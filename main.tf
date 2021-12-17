@@ -43,6 +43,8 @@ module "vault-cs" {
   project_id = module.base-config.infr_project_id
   vault_hostname = var.vault_public_ip
   vault_port = var.vault_port
+  psql_hostname = data.tfe_outputs.infra.values.controller_public_ip[0]
   psql_pw = var.psql_pw
   psql_user = var.psql_user
+  depends_on = [module.base-config]
 }
