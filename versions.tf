@@ -6,6 +6,9 @@ terraform {
       vault = {
       source  = "hashicorp/vault"
     }
+      tfe = {
+      source  = "hashicorp/tfe"
+    }
   }
     backend "remote" {
       organization = "PublicSector-ATARC"
