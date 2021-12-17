@@ -22,7 +22,7 @@ variable "root_db" {
   description = "the master db of the psql server for the vault connection"
 }
 
-variable "vault_hostname" {
+variable "vault_host" {
 description = "ip or hostname of the vault server"
 }
 

@@ -41,7 +41,7 @@ enable_oidc = var.enable_oidc
 module "vault-cs" {
  source = "./vault-cs-module"
  project_id = module.base-config.infr_project_id
- vault_hostname = var.vault_public_ip
+ vault_host = data.tfe_outputs.infra.values.vault_private_ip
  vault_port = var.vault_port
  psql_host = data.tfe_outputs.infra.values.controller_private_ip[0]
  psql_pw = var.psql_pw
