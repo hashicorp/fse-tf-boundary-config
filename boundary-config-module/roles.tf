@@ -9,8 +9,8 @@ resource "boundary_role" "global_org_admin" {
 }
 resource "boundary_role" "dev_org_admin" {
   name           = "dev_org_admin"
-  scope_id       = boundary_scope.dev.id
-  grant_scope_id = boundary_scope.dev.id
+  scope_id       = boundary_scope.core_infra.id
+  grant_scope_id = boundary_scope.core_infra.id
   grant_strings = [
     "id=*;type=*;actions=*"
   ]
@@ -23,8 +23,8 @@ resource "boundary_role" "dev_org_admin" {
 resource "boundary_role" "infra_proj_admin" {
   name           = "dev_proj_admin"
   description    = "admin role for the infra project"
-  scope_id       = boundary_scope.dev.id
-  grant_scope_id = boundary_scope.core_infra_proj.id
+  scope_id       = boundary_scope.core_infra.id
+  grant_scope_id = boundary_scope.db_infra_proj.id
   grant_strings = [
     "id=*;type=*;actions=*"
   ]
@@ -49,7 +49,7 @@ resource "boundary_role" "global_anon_listing" {
 resource "boundary_role" "dev_anon_listing" {
   name        = "anon"
   description = "role for anon auth'd users"
-  scope_id    = boundary_scope.dev.id
+  scope_id    = boundary_scope.core_infra.id
   grant_strings = [
     "id=*;type=scope;actions=list,no-op",
     "id=*;type=auth-method;actions=authenticate,list",
@@ -68,6 +68,6 @@ resource "boundary_role" "dev_readonly" {
   grant_strings = [
     "id=*;type=*;actions=read"
   ]
-  scope_id       = boundary_scope.dev.id
-  grant_scope_id = boundary_scope.dev.id
+  scope_id       = boundary_scope.core_infra.id
+  grant_scope_id = boundary_scope.core_infra.id
 }

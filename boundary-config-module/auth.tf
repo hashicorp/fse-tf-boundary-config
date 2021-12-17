@@ -15,7 +15,7 @@ resource "boundary_auth_method_oidc" "auth0" {
 resource "boundary_auth_method_password" "dev_pass" {
   name        = "dev_password_auth_method"
   description = "password auth method for development scope"
-  scope_id    = boundary_scope.dev.id
+  scope_id    = boundary_scope.core_infra.id
 }
 
 resource "boundary_auth_method_password" "global_pass" {

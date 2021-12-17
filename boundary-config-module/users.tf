@@ -54,7 +54,7 @@ resource "boundary_user" "backend" {
   name        = each.key
   description = "Backend user: ${each.key}"
   account_ids = [boundary_account_password.backend_user_acct[each.value].id]
-  scope_id    = boundary_scope.dev.id
+  scope_id    = boundary_scope.core_infra.id
 }
 
 resource "boundary_user" "frontend" {
@@ -62,7 +62,7 @@ resource "boundary_user" "frontend" {
   name        = each.key
   description = "Frontend user: ${each.key}"
   account_ids = [boundary_account_password.frontend_user_acct[each.value].id]
-  scope_id    = boundary_scope.dev.id
+  scope_id    = boundary_scope.core_infra.id
 }
 
 resource "boundary_user" "leadership" {
@@ -70,5 +70,5 @@ resource "boundary_user" "leadership" {
   name        = each.key
   description = "WARNING: Managers should be read-only"
   account_ids = [boundary_account_password.leadership_user_acct[each.value].id]
-  scope_id    = boundary_scope.dev.id
+  scope_id    = boundary_scope.core_infra.id
 }
