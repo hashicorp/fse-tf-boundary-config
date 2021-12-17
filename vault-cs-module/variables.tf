@@ -8,12 +8,10 @@ variable "psql_port" {
 }
 
 variable "psql_user" {
-  default = "postgres"
   description = "service account for vault to connect to the psql server"
 }
 
 variable "psql_pw" {
-  default = "postgres"
   description = "service account password for vault to connect to the psql server"
 }
 variable "psql_hostname" {
