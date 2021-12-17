@@ -49,6 +49,3 @@ variable "vault_token" {
 
 variable "tfc_token" {
 }
-
-variable "kms_id" {
-}
