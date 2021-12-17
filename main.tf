@@ -1,17 +1,17 @@
 provider "boundary" {
-  addr             = "http://${tfe_outputs.infra.values.controller_public_ip[0]}:9200/"
+  addr             = "http://${data.tfe_outputs.infra.values.controller_public_ip[0]}:9200/"
   recovery_kms_hcl = <<EOT
   kms "awskms" {
   purpose    = "recovery"
   region     = "us-east-1"
   key_id     = "global_recovery"
-  kms_key_id = ${tfe_outputs.infra.values.controller.kms_recovery_key_id}
+  kms_key_id = ${data.tfe_outputs.infra.values.controller.kms_recovery_key_id}
 }
 EOT
 }
 
 provider "vault" {
-  address    = "http://${tfe_outputs.infra.values.vault_public_ip}:${var.vault_port}"
+  address    = "http://${data.tfe_outputs.infra.values.vault_public_ip}:${var.vault_port}"
   token      = var.vault_token
 }
 
@@ -19,12 +19,12 @@ provider "tfe" {
   token    = var.tfc_token
 }
 
-data "tfe_workspace" "boundary_config" {
+data "tfe_workspace" "boundary_infra" {
   name         = "fse-tf-atarc-boundary-config"
   organization = "PublicSector-ATARC"
 }
 data "tfe_outputs" "infra" {
-  name         = "fse-tf-atarc-boundary-infra"
+  workspace         = data.tfe_workspace.boundary_infra.id
   organization = "PublicSector-ATARC"
 }
 
