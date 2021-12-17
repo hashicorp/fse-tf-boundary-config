@@ -19,7 +19,6 @@ variable "psql_hostname" {
 }
 
 variable "root_db" {
-  default = "postgres"
   description = "the master db of the psql server for the vault connection"
 }
 
