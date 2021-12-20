@@ -61,6 +61,7 @@ resource "boundary_target" "psql_analysts" {
   type         = "tcp"
   default_port = var.psql_port
   scope_id     = var.project_id
+  worker_filter = "\"/region\" == \"us-east-1\""
   host_source_ids = [
     boundary_host_set.psql.id
   ]
