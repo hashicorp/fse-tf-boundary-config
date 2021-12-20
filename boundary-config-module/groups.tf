@@ -34,3 +34,11 @@ resource "boundary_group" "dev_admins" {
   var.enable_oidc ? boundary_user.kelly[0].id : null])
   scope_id = boundary_scope.core_infra.id
 }
+
+resource "boundary_group" "hpc_admins" {
+  name        = "hpc_admins"
+  description = "group for global admins"
+  member_ids = compact([boundary_user.zues.id,
+  var.enable_oidc ? boundary_user.dave[0].id : null])
+  scope_id = boundary_scope.hcp.id
+}
