@@ -1,5 +1,5 @@
 provider "boundary" {
-  addr             = "http://${data.tfe_outputs.infra.values.controller_public_ip[0]}:9200/"
+  addr             = "http://${data.tfe_outputs.infra.values.controller_public_ip}:9200/"
   recovery_kms_hcl = <<EOT
   kms "awskms" {
   purpose    = "recovery"
@@ -44,7 +44,7 @@ module "vault-cs" {
  project_id = module.base-config.infr_project_id
  vault_host = data.tfe_outputs.infra.values.vault_private_ip
  vault_port = var.vault_port
- psql_host = data.tfe_outputs.infra.values.controller_private_ip[0]
+ psql_host = data.tfe_outputs.infra.values.controller_private_ip
  psql_pw = var.psql_pw
  psql_user = var.psql_user
  root_db = "postgres"
