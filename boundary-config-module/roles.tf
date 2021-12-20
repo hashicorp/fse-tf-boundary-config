@@ -10,7 +10,7 @@ resource "boundary_role" "global_org_admin" {
 }
 
 resource "boundary_role" "hpc_org_admin" {
-  name           = "global_org_admin"
+  name           = "hpc_org_admin"
   scope_id       = boundary_scope.global.id
   grant_scope_id = boundary_scope.hcp.id
   grant_strings = [
