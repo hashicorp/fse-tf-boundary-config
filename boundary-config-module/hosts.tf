@@ -22,7 +22,7 @@ resource "boundary_host_set" "backend_servers" {
   host_ids        = [for host in boundary_host.backend_servers : host.id]
 }
 
-resource "boundary_host" "backend_servers" {
+resource "boundary_host" "hc_vault" {
   for_each        = var.target_ips
   type            = "static"
   name            = "backend_server_${each.value}"
