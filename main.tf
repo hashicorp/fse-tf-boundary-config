@@ -1,5 +1,5 @@
 provider "boundary" {
-  addr             = "http://${data.tfe_outputs.infra.values.controller_public_ip}:9200/"
+  addr             = "http://${data.tfe_outputs.infra.values.controller_private_ip}:9200/"
   recovery_kms_hcl = <<EOT
   kms "awskms" {
   purpose    = "recovery"
@@ -11,7 +11,7 @@ EOT
 }
 
 provider "vault" {
-  address    = "http://${data.tfe_outputs.infra.values.vault_public_ip}:${var.vault_port}"
+  address    = "http://${data.tfe_outputs.infra.values.vault_private_ip}:${var.vault_port}"
   token      = var.vault_token
 }
 
