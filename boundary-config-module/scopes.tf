@@ -19,6 +19,6 @@ resource "boundary_scope" "db_infra_proj" {
 resource "boundary_scope" "hcp" {
   scope_id    = boundary_scope.global.id
   name        = "High_Performance_Computing"
-  description = "HCP Scope"
+  description = "HPC Scope"
 }
 
