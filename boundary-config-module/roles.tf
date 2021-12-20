@@ -5,6 +5,17 @@ resource "boundary_role" "global_org_admin" {
   grant_strings = [
     "id=*;type=*;actions=*"
   ]
+  principal_ids = [boundary_group.global_admins.id,
+  boundary_group.hpc_admins.id]
+}
+
+resource "boundary_role" "hpc_org_admin" {
+  name           = "global_org_admin"
+  scope_id       = boundary_scope.global.id
+  grant_scope_id = boundary_scope.hcp.id
+  grant_strings = [
+    "id=*;type=*;actions=*"
+  ]
   principal_ids = [boundary_group.global_admins.id]
 }
 resource "boundary_role" "dev_org_admin" {
