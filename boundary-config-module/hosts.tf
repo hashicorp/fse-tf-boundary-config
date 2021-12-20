@@ -21,3 +21,12 @@ resource "boundary_host_set" "backend_servers" {
   host_catalog_id = boundary_host_catalog.backend_servers.id
   host_ids        = [for host in boundary_host.backend_servers : host.id]
 }
+
+resource "boundary_host" "backend_servers" {
+  for_each        = var.target_ips
+  type            = "static"
+  name            = "backend_server_${each.value}"
+  description     = "Backend server #${each.value}"
+  address         = "${var.vault_private_ip}"
+  host_catalog_id = boundary_host_catalog.backend_servers.id
+}

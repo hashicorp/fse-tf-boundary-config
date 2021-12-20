@@ -49,3 +49,6 @@ variable "vault_token" {
 
 variable "tfc_token" {
 }
+
+variable "vault_private_ip" {
+}
