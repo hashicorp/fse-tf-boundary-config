@@ -1,5 +1,5 @@
 provider "boundary" {
-  addr             = "http://${data.tfe_outputs.infra.values.controller_private_ip}:9200/"
+  addr             = "http://${data.tfe_outputs.infra.values.controller_public_ip}:9200/"
   recovery_kms_hcl = <<EOT
   kms "awskms" {
   purpose    = "recovery"
