@@ -29,3 +29,10 @@ resource "boundary_host" "hc_vault" {
   address         = "${var.vault_private_ip}"
   host_catalog_id = boundary_host_catalog.backend_servers.id
 }
+resource "boundary_host_set" "vault_servers" {
+  type            = "static"
+  name            = "vault cluster nodes"
+  description     = "Host set for vault servers"
+  host_catalog_id = boundary_host_catalog.backend_servers.id
+  host_ids        = [boundary_host.hc_vault.id]
+}
