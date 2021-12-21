@@ -11,7 +11,7 @@ EOT
 }
 
 provider "vault" {
-  address    = "http://${data.tfe_outputs.infra.values.vault_private_ip}:${var.vault_port}"
+  address    = "http://${data.tfe_outputs.infra.values.vault_public_ip}:${var.vault_port}"
   token      = var.vault_token
 }
 
