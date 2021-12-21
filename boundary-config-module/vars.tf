@@ -76,6 +76,3 @@ variable "callback_url" {
 
 variable "vault_private_ip" {
 }
-variable  "vault_token" {
-
-}
