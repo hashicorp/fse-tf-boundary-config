@@ -1,7 +1,3 @@
-variable "url" {
-  default = "http://127.0.0.1:9200"
-}
-
 variable "oidc_subject2" {
   description = "oidc subject string for global admin"
   default     = null
@@ -76,4 +72,7 @@ variable "api_url_prefix" {
 variable "callback_url" {
   description = "oidc callback url address"
   default     = "http://localhost:9200/v1/auth-methods/oidc:authenticate:callback"
+}
+
+variable "vault_private_ip" {
 }
