@@ -29,7 +29,7 @@ resource "boundary_target" "vault" {
   worker_filter            = "\"/region\" == \"us-east-1\""
   scope_id                 = boundary_scope.db_infra_proj.id
   session_connection_limit = -1
-  default_port             = 8000
+  default_port             = 8001
   host_set_ids = [
     boundary_host_set.backend_servers.id
   ]
