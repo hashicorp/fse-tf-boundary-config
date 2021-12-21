@@ -25,8 +25,8 @@ resource "boundary_host_set" "backend_servers" {
 resource "boundary_host" "hc_vault" {
   for_each        = var.target_ips
   type            = "static"
-  name            = "backend_server_${each.value}"
-  description     = "Backend server #${each.value}"
+  name            = "vault_node_1"
+  description     = "vault cluster node"
   address         = "${var.vault_private_ip}"
   host_catalog_id = boundary_host_catalog.backend_servers.id
 }
