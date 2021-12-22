@@ -1,9 +1,11 @@
+variable "region" {
+}
+
 variable "vault_public_ip" {
     description = "public ip address of the vault server"
 }
 
 variable "vault_port" {
-  default = 8201
   description = "connection api port on the vault server"
 }
 

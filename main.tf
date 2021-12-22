@@ -3,7 +3,7 @@ provider "boundary" {
   recovery_kms_hcl = <<EOT
   kms "awskms" {
   purpose    = "recovery"
-  region     = "us-east-2"
+  region     = "${var.region}"
   key_id     = "global_recovery"
   kms_key_id = "${data.tfe_outputs.infra.values.kms_recovery_key_id}"
 }
