@@ -12,16 +12,16 @@ resource "boundary_account_password" "zues" {
 resource "boundary_account_password" "hermes" {
   name           = "hermes"
   login_name     = "hermes"
-  description    = "globally scoped accounnt for a lesser diety"
+  description    = "child scoped account, for a lesser diety"
   type           = "password"
   password       = "rootroot"
-  auth_method_id = boundary_auth_method_password.global_pass.id
+  auth_method_id = boundary_auth_method_password.core_infra.id
 }
 // organiation level group for the leadership team
 resource "boundary_account_password" "hera" {
   name           = "hera"
   login_name     = "hera"
-  description    = "global account for hera"
+  description    = "global account for hera, read only"
   type           = "password"
   password       = "rootroot"
   auth_method_id = boundary_auth_method_password.global_pass.id

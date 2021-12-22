@@ -25,8 +25,8 @@ resource "boundary_target" "vault_ui" {
 
 resource "boundary_target" "postgres_db" {
   type                     = "tcp"
-  name                     = "vault"
-  description              = "hashicorp vault cluster"
+  name                     = "postgres_db"
+  description              = "postgres database"
   worker_filter            = "\"/region\" == \"us-east-1\""
   scope_id                 = boundary_scope.db_infra_proj.id
   session_connection_limit = -1

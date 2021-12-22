@@ -12,9 +12,9 @@ resource "boundary_auth_method_oidc" "auth0" {
   claims_scopes      = ["profile"]
 }
 
-resource "boundary_auth_method_password" "dev_pass" {
-  name        = "dev_password_auth_method"
-  description = "password auth method for development scope"
+resource "boundary_auth_method_password" "core_infra" {
+  name        = "core_infra_password_auth_method"
+  description = "password auth method for core infrastructure scope"
   scope_id    = boundary_scope.core_infra.id
 }
 

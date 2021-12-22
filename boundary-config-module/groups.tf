@@ -6,8 +6,8 @@ resource "boundary_group" "global_admins" {
   scope_id = boundary_scope.global.id
 }
 
-resource "boundary_group" "dev_admins" {
-  name        = "dev_admin"
+resource "boundary_group" "infra_admins" {
+  name        = "infra_admins"
   description = "group for dev org admins"
   member_ids = compact([boundary_user.hermes.id,
   var.enable_oidc ? boundary_user.kelly[0].id : null])

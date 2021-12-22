@@ -1,6 +1,6 @@
 resource "boundary_host_catalog" "backend_servers" {
   name        = "backend_servers"
-  description = "Web servers for backend team"
+  description = "servers for the backend team"
   type        = "static"
   scope_id    = boundary_scope.db_infra_proj.id
 }

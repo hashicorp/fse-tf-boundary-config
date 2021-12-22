@@ -18,19 +18,19 @@ resource "boundary_role" "hpc_org_admin" {
   ]
   principal_ids = [boundary_group.global_admins.id]
 }
-resource "boundary_role" "dev_org_admin" {
-  name           = "dev_org_admin"
+resource "boundary_role" "core_infra_admin" {
+  name           = "core_infra_admin"
   scope_id       = boundary_scope.core_infra.id
   grant_scope_id = boundary_scope.core_infra.id
   grant_strings = [
     "id=*;type=*;actions=*"
   ]
   principal_ids = [
-    boundary_group.dev_admins.id,
+    boundary_group.infra_admins.id,
     boundary_group.global_admins.id]
 }
 resource "boundary_role" "infra_proj_admin" {
-  name           = "dev_proj_admin"
+  name           = "infra_proj_admin"
   description    = "admin role for the infra project"
   scope_id       = boundary_scope.core_infra.id
   grant_scope_id = boundary_scope.db_infra_proj.id
@@ -38,7 +38,7 @@ resource "boundary_role" "infra_proj_admin" {
     "id=*;type=*;actions=*"
   ]
   principal_ids = [
-    boundary_group.dev_admins.id,
+    boundary_group.infra_admins.id,
     boundary_group.global_admins.id]
 }
 
@@ -53,7 +53,7 @@ resource "boundary_role" "global_anon_listing" {
   ]
   principal_ids = ["u_anon"]
 }
-resource "boundary_role" "dev_anon_listing" {
+resource "boundary_role" "core_infra_anon_listing" {
   name        = "anon"
   description = "role for anon auth'd users"
   scope_id    = boundary_scope.core_infra.id
@@ -66,7 +66,7 @@ resource "boundary_role" "dev_anon_listing" {
   principal_ids = ["u_anon"]
 
 }
-resource "boundary_role" "dev_readonly" {
+resource "boundary_role" "core_infra_readonly" {
   name        = "readonly"
   description = "Read-only role"
   principal_ids = [
