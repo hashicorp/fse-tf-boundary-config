@@ -20,7 +20,7 @@ resource "boundary_account_password" "hermes" {
 // organiation level group for the leadership team
 resource "boundary_account_password" "hera" {
   name           = "hera"
-  login_name     = "ares"
+  login_name     = "hera"
   description    = "global account for hera"
   type           = "password"
   password       = "rootroot"
