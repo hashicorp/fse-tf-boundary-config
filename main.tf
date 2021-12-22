@@ -19,12 +19,13 @@ provider "tfe" {
   token    = var.tfc_token
 }
 
-data "tfe_workspace" "boundary_infra" {
-  name         = "fse-tf-atarc-boundary-infra"
+data "tfe_outputs" "infra" {
+  workspace         = "fse-tf-atarc-boundary-infra"
   organization = "PublicSector-ATARC"
 }
-data "tfe_outputs" "infra" {
-  workspace         = data.tfe_workspace.boundary_infra.name
+
+data "tfe_outputs" "vault" {
+  workspace         = "fse-tf-atarc-vault"
   organization = "PublicSector-ATARC"
 }
 
@@ -42,9 +43,9 @@ vault_private_ip = data.tfe_outputs.infra.values.vault_private_ip
 module "vault-cs" {
  source = "./vault-cs-module"
  project_id = module.base-config.infr_project_id
- vault_host = data.tfe_outputs.infra.values.vault_private_ip
+ vault_host = data.tfe_outputs.vault.values.vault_private_ip
  vault_port = var.vault_port
- psql_host = data.tfe_outputs.infra.values.controller_private_ip
+ psql_host = data.tfe_outputs.vault.values.controller_private_ip
  psql_pw = var.psql_pw
  psql_user = var.psql_user
  root_db = "postgres"
