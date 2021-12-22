@@ -38,37 +38,15 @@ resource "boundary_user" "hermes" {
 resource "boundary_user" "hera" {
   name        = "hera"
   description = "password account for hera"
-  account_ids = []
+  account_ids = [
+  boundary_account_password.hera.id]
   scope_id    = boundary_scope.global.id
 }
 
 resource "boundary_user" "ares" {
   name        = "ares"
   description = "password account for ares"
-  account_ids = []
+  account_ids = [
+  boundary_account_password.ares.id]
   scope_id    = boundary_scope.global.id
-}
-
-resource "boundary_user" "backend" {
-  for_each    = var.backend_team
-  name        = each.key
-  description = "Backend user: ${each.key}"
-  account_ids = [boundary_account_password.backend_user_acct[each.value].id]
-  scope_id    = boundary_scope.core_infra.id
-}
-
-resource "boundary_user" "frontend" {
-  for_each    = var.frontend_team
-  name        = each.key
-  description = "Frontend user: ${each.key}"
-  account_ids = [boundary_account_password.frontend_user_acct[each.value].id]
-  scope_id    = boundary_scope.core_infra.id
-}
-
-resource "boundary_user" "leadership" {
-  for_each    = var.leadership_team
-  name        = each.key
-  description = "WARNING: Managers should be read-only"
-  account_ids = [boundary_account_password.leadership_user_acct[each.value].id]
-  scope_id    = boundary_scope.core_infra.id
 }

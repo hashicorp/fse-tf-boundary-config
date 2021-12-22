@@ -76,3 +76,5 @@ variable "callback_url" {
 
 variable "vault_private_ip" {
 }
+variable "controller_private_ip" {
+}

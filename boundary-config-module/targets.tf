@@ -1,36 +1,37 @@
-resource "boundary_target" "backend_servers_ssh" {
+resource "boundary_target" "vault_ssh" {
   type                     = "tcp"
-  name                     = "backend_servers_ssh"
-  description              = "Backend SSH target"
+  name                     = "vault_ssh"
+  description              = "vault server SSH target"
   scope_id                 = boundary_scope.db_infra_proj.id
   session_connection_limit = -1
   default_port             = 22
   host_set_ids = [
-    boundary_host_set.backend_servers.id
+    boundary_host_set.vault_servers.id
   ]
 }
 
-resource "boundary_target" "backend_servers_website" {
+resource "boundary_target" "vault_ui" {
   type                     = "tcp"
-  name                     = "backend_servers_website"
-  description              = "Backend website target"
+  name                     = "vault appplication front end"
+  description              = "hashicorp vault cluster"
+  worker_filter            = "\"/region\" == \"us-east-1\""
   scope_id                 = boundary_scope.db_infra_proj.id
   session_connection_limit = -1
-  default_port             = 8000
+  default_port             = 8002
   host_set_ids = [
-    boundary_host_set.backend_servers.id
+    boundary_host_set.vault_servers.id
   ]
 }
 
-resource "boundary_target" "vault" {
+resource "boundary_target" "postgres_db" {
   type                     = "tcp"
   name                     = "vault"
   description              = "hashicorp vault cluster"
   worker_filter            = "\"/region\" == \"us-east-1\""
   scope_id                 = boundary_scope.db_infra_proj.id
   session_connection_limit = -1
-  default_port             = 8001
+  default_port             = 5432
   host_set_ids = [
-    boundary_host_set.backend_servers.id
+    boundary_host_set.database_servers.id
   ]
 }
