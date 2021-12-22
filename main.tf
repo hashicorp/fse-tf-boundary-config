@@ -11,7 +11,7 @@ EOT
 }
 
 provider "vault" {
-  address    = "http://${data.tfe_outputs.infra.values.vault_public_ip}:${var.vault_port}"
+  address    = "http://${data.tfe_outputs.vault.values.vault_public_ip}:${var.vault_port}"
   token      = var.vault_token
 }
 
@@ -37,7 +37,7 @@ source = "./boundary-config-module"
 #oidc_subject2      = var.oidc_subject2
 #oidc_subject1      = var.oidc_subject1
 enable_oidc = var.enable_oidc
-vault_private_ip = data.tfe_outputs.infra.values.vault_private_ip
+vault_private_ip = data.tfe_outputs.vault.values.vault_private_ip
 }
 
 module "vault-cs" {
