@@ -15,7 +15,7 @@ resource "boundary_account_password" "hermes" {
   description    = "child scoped account, for a lesser diety"
   type           = "password"
   password       = "rootroot"
-  auth_method_id = boundary_auth_method_password.core_infra.id
+  auth_method_id = boundary_auth_method_password.global_pass.id
 }
 // organiation level group for the leadership team
 resource "boundary_account_password" "hera" {
