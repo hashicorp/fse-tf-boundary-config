@@ -15,7 +15,7 @@ variable "psql_pw" {
   description = "service account password for vault to connect to the psql server"
 }
 variable "psql_host" {
-  description = "ip or hostname of the psql server"
+  description = "internal ip or hostname of the psql server"
 }
 
 variable "root_db" {
