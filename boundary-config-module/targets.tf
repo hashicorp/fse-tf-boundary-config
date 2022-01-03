@@ -14,7 +14,7 @@ resource "boundary_target" "vault_ui" {
   type                     = "tcp"
   name                     = "vault appplication front end"
   description              = "hashicorp vault cluster"
-  worker_filter            = "\"/region\" == \"us-east-1\""
+  #worker_filter            = "\"/region\" == \"/${var.region}\""
   scope_id                 = boundary_scope.db_infra_proj.id
   session_connection_limit = -1
   default_port             = 8002
@@ -27,7 +27,7 @@ resource "boundary_target" "postgres_db" {
   type                     = "tcp"
   name                     = "postgres_db"
   description              = "postgres database"
-  worker_filter            = "\"/region\" == \"us-east-1\""
+  #worker_filter            = "\"/region\" == \"/${var.region}\""
   scope_id                 = boundary_scope.db_infra_proj.id
   session_connection_limit = -1
   default_port             = 5432
