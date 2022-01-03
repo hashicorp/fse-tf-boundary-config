@@ -47,9 +47,11 @@ variable "vault_unseal" {
 }
 
 variable "vault_token" {
+  default = null
 }
 
 variable "tfc_token" {
+default = null
 }
 
 variable "users_password" {
