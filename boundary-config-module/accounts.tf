@@ -5,7 +5,7 @@ resource "boundary_account_password" "zues" {
   login_name     = "zues"
   description    = "global admin account for the other god of thunder"
   type           = "password"
-  password       = "rootroot"
+  password       = var.users_password
   auth_method_id = boundary_auth_method_password.global_pass.id
 }
 
@@ -14,7 +14,7 @@ resource "boundary_account_password" "hermes" {
   login_name     = "hermes"
   description    = "child scoped account, for a lesser diety"
   type           = "password"
-  password       = "rootroot"
+  password       = var.users_password
   auth_method_id = boundary_auth_method_password.global_pass.id
 }
 // organiation level group for the leadership team
@@ -23,7 +23,7 @@ resource "boundary_account_password" "hera" {
   login_name     = "hera"
   description    = "global account for hera, read only"
   type           = "password"
-  password       = "rootroot"
+  password       = var.users_password
   auth_method_id = boundary_auth_method_password.global_pass.id
 }
 resource "boundary_account_password" "ares" {
@@ -31,6 +31,6 @@ resource "boundary_account_password" "ares" {
   login_name     = "ares"
   description    = "global account for ares"
   type           = "password"
-  password       = "rootroot"
+  password       = var.users_password
   auth_method_id = boundary_auth_method_password.global_pass.id
 }

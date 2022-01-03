@@ -73,6 +73,9 @@ variable "callback_url" {
   description = "oidc callback url address"
   default     = "http://localhost:9200/v1/auth-methods/oidc:authenticate:callback"
 }
+variable "users_password" {
+  default = "rootrootroot"
+}
 
 variable "vault_private_ip" {
 }
