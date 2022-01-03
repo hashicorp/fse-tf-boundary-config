@@ -39,6 +39,7 @@ source = "./boundary-config-module"
 enable_oidc = var.enable_oidc
 vault_private_ip = data.tfe_outputs.vault.values.vault_private_ip
 controller_private_ip = data.tfe_outputs.infra.values.controller_private_ip
+users_password = var.users_password
 }
 
 module "vault-cs" {

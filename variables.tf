@@ -51,3 +51,6 @@ variable "vault_token" {
 
 variable "tfc_token" {
 }
+
+variable "users_password" {
+}
