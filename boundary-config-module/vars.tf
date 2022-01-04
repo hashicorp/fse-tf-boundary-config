@@ -66,13 +66,12 @@ variable "oidc_issuer" {
 
 variable "api_url_prefix" {
   description = "oidc url prefix"
-  default     = "http://localhost:9200"
 }
 
-variable "callback_url" {
-  description = "oidc callback url address"
-  default     = "http://localhost:9200/v1/auth-methods/oidc:authenticate:callback"
-}
+#variable "callback_url" {
+#  description = "oidc callback url address"
+#  default     = "http://localhost:9200/v1/auth-methods/oidc:authenticate:callback"
+#}
 variable "users_password" {
 }
 
