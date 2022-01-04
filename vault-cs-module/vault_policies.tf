@@ -30,11 +30,11 @@ EOT
 resource "vault_policy" "northwind_db_policy" {
   name   = "northwind_db_policy"
   policy = <<EOT
-path "database/creds/analyst" {
+path "psql/creds/analyst" {
   capabilities = ["read"]
 }
 
-path "database/creds/dba" {
+path "psql/creds/dba" {
   capabilities = ["read"]
 }
 EOT
