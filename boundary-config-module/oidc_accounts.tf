@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 resource "boundary_account_oidc" "kelly" {
   count          = var.enable_oidc ? 1 : 0
   auth_method_id = boundary_auth_method_oidc.auth0[0].id
