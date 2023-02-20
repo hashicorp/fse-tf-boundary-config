@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 provider "boundary" {
   addr             = "http://${data.tfe_outputs.infra.values.controller_public_ip}:9200/"
   recovery_kms_hcl = <<EOT

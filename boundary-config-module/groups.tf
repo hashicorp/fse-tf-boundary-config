@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 resource "boundary_group" "global_admins" {
   name        = "global_admins"
   description = "group for global admins"

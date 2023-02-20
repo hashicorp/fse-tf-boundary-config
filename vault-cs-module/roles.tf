@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 resource "vault_database_secret_backend_role" "analyst_role" {
   backend = vault_mount.psql.path
   name    = "analyst"

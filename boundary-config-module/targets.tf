@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 resource "boundary_target" "vault_ssh" {
   type                     = "tcp"
   name                     = "vault_ssh"

@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 variable "oidc_subject2" {
   description = "oidc subject string for global admin"
   default     = null
