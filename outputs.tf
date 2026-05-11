@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 
 output "vault_token" {
   value = var.vault_token

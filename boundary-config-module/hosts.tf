@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "boundary_host_catalog" "backend_servers" {
   name        = "backend_servers"
   description = "servers for the backend team"

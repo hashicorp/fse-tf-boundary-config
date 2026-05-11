@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "boundary_target" "vault_ssh" {
   type                     = "tcp"
   name                     = "vault_ssh"

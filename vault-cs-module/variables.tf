@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 variable "project_id" {
   description = "project id to deploy hosts and targets"
 }

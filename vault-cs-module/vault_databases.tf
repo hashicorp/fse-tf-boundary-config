@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "vault_mount" "psql" {
   path = "psql"
   type = "database"

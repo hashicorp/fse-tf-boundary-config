@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "boundary_account_oidc" "kelly" {
   count          = var.enable_oidc ? 1 : 0
   auth_method_id = boundary_auth_method_oidc.auth0[0].id

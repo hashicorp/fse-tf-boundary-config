@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "boundary_scope" "global" {
   global_scope = true
   name         = "ATARC Global Scope"

@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "boundary_host_catalog" "host_cat" {
   name        = "psql host cat"
   description = "catalog for the northwins database servers"

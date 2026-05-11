@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "boundary_auth_method_oidc" "auth0" {
   count              = var.enable_oidc ? 1 : 0
   name               = "Auth0"

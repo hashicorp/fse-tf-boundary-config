@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "boundary_role" "global_org_admin" {
   name           = "global_org_admin"
   scope_id       = boundary_scope.global.id

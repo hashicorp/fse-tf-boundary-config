@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 variable "oidc_subject2" {
   description = "oidc subject string for global admin"
   default     = null
