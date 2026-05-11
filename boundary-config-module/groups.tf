@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "boundary_group" "global_admins" {
   name        = "global_admins"
   description = "group for global admins"

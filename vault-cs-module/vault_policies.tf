@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 resource "vault_policy" "controller_policy" {
   name   = "boundary_controller_policy"
   policy = <<EOT

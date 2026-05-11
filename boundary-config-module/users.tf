@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 ## need to add auth0 account to boundary admin user
 
 

@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 provider "boundary" {
   addr             = "http://${data.tfe_outputs.infra.values.controller_public_ip}:9200/"
   recovery_kms_hcl = <<EOT
